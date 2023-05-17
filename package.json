@@ -1,0 +1,37 @@
+{
+    "author": "Andrey Zolotukhin <andrewzolotukhin@gmail.com>",
+    "bugs": {
+        "url": "https://github.com/andrewzolotukhin/react-url-params-model-binder/issues"
+    },
+    "name": "react-url-params-model-binder",
+    "description": "React URL Params to Model binder",
+    "devDependencies": {
+        "typescript": "^5.0.4"
+    },
+    "files": [
+        "dist"
+    ],
+    "homepage": "https://github.com/andrewzolotukhin/react-url-params-model-binder",
+    "keywords": [
+        "react",
+        "url",
+        "params",
+        "model",
+        "binder"
+    ],
+    "license": "BSD-3-Clause",
+    "main": "dist/index.js",
+    "peerDependencies": {
+        "react-router-dom": ">6.11.0"
+    },
+    "repository": {
+        "type": "git+https",
+        "url": "https://github.com/andrewzolotukhin/react-url-params-model-binder.git"
+    },
+    "scripts": {
+        "build": "tsc"
+    },
+    "type": "module",
+    "types": "dist/index.d.ts",
+    "version": "1.0.0"
+}
