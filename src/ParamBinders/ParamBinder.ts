@@ -154,11 +154,15 @@ export class ParamBinder<TModel, TModelValue> {
     /**
      * Returns value of url parameter from model. Can be overriden in child classes.
      * @param model A Model to get value from
+     * @param allParams all url parameters that can be used to get default value
      */
-    async getUrlParamValue(model: TModel): Promise<string> {
+    async getUrlParamValue(
+        model: TModel,
+        allParams?: URLSearchParams
+    ): Promise<string> {
         const valToReturn = await this.getUrlParamValueFunc(model);
         return valToReturn === undefined || valToReturn === null
-            ? await this.getDefaultParamValue()
+            ? await this.getDefaultParamValue(allParams)
             : valToReturn.toString();
     }
 

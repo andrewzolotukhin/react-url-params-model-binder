@@ -127,12 +127,17 @@ export class ModelBinder<TModel> {
                 : new URLSearchParams();
         await Promise.all(
             this.#paramBinders.map(async (pb) => {
-                const urlParamValue = await pb.getUrlParamValue(model);
+                const urlParamValue = await pb.getUrlParamValue(
+                    model,
+                    urlParams
+                );
                 const defaultParamValue = await pb.getDefaultParamValue(
                     urlParams
                 );
                 if (urlParamValue !== defaultParamValue) {
                     urlParams.set(pb.urlParamName, urlParamValue);
+                } else {
+                    urlParams.delete(pb.urlParamName);
                 }
             })
         );
